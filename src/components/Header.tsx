@@ -18,23 +18,22 @@ export default function Header() {
   }
 
   return (
-    <header className={styles.header}>
-      <Link href="/" className={styles.logo} onClick={close}>
-        MC
-      </Link>
-
-      <div className={styles.desktopNav}>
-        <Link href="/#lavori" className={styles.navLink}>
-          Lavori
+    <>
+      <header className={styles.header}>
+        <Link href="/" className={styles.logo} onClick={close}>
+          MC
         </Link>
-        <Link href="/about" className={styles.navLink}>
-          About
-        </Link>
-        <ThemeToggle />
-      </div>
 
-      <div className={styles.mobileActions}>
-        <ThemeToggle />
+        <nav className={styles.desktopNav}>
+          <Link href="/#lavori" className={styles.navLink}>
+            Lavori
+          </Link>
+          <Link href="/about" className={styles.navLink}>
+            About
+          </Link>
+          <ThemeToggle />
+        </nav>
+
         <button
           className={styles.burger}
           onClick={() => setOpen(!open)}
@@ -45,16 +44,21 @@ export default function Header() {
           <span className={`${styles.burgerLine} ${open ? styles.burgerOpen2 : ""}`} />
           <span className={`${styles.burgerLine} ${open ? styles.burgerOpen3 : ""}`} />
         </button>
-      </div>
+      </header>
 
-      <nav className={`${styles.mobileMenu} ${open ? styles.mobileMenuOpen : ""}`}>
-        <Link href="/#lavori" className={styles.mobileLink} onClick={close}>
-          Lavori
-        </Link>
-        <Link href="/about" className={styles.mobileLink} onClick={close}>
-          About
-        </Link>
-      </nav>
-    </header>
+      <div className={`${styles.mobileMenu} ${open ? styles.mobileMenuOpen : ""}`}>
+        <nav className={styles.mobileNav}>
+          <Link href="/#lavori" className={styles.mobileLink} onClick={close}>
+            Lavori
+          </Link>
+          <Link href="/about" className={styles.mobileLink} onClick={close}>
+            About
+          </Link>
+        </nav>
+        <div className={styles.mobileTheme}>
+          <ThemeToggle />
+        </div>
+      </div>
+    </>
   );
 }
