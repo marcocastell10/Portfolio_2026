@@ -1,0 +1,35 @@
+.hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--padding-x);
+}
+
+.content {
+  max-width: 900px;
+}
+
+.title {
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.subtitle {
+  margin-top: 20px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .subtitle {
+    margin-top: 24px;
+    font-size: 1rem;
+  }
+}
