@@ -1,0 +1,67 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+[data-theme="dark"] .overlay {
+  background: #0a0a0a;
+}
+
+.overlay.done {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.percentage {
+  font-family: var(--font-sans);
+  font-size: clamp(2.5rem, 10vw, 6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #1a1a1a;
+  margin-bottom: clamp(16px, 4vw, 32px);
+  font-variant-numeric: tabular-nums;
+}
+
+[data-theme="dark"] .percentage {
+  color: #e5e5e5;
+}
+
+.barWrapper {
+  width: min(70vw, 400px);
+  height: 3px;
+  background: #e5e5e5;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .barWrapper {
+  background: #2a2a2a;
+}
+
+.bar {
+  height: 100%;
+  width: 0%;
+  background: #1a1a1a;
+  border-radius: 2px;
+  transition: width 0.1s linear;
+}
+
+[data-theme="dark"] .bar {
+  background: #e5e5e5;
+}
+
+.content {
+  visibility: hidden;
+}
+
+.content.visible {
+  visibility: visible;
+}
