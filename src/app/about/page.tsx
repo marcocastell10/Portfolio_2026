@@ -16,25 +16,19 @@ export default function AboutPage() {
       <main className={styles.page}>
         <div className={styles.container}>
           <p className={styles.label}>About</p>
-          <h1 className={styles.title}>
-            Progetto esperienze visive che connettono brand e persone.
-          </h1>
           <p className={styles.text}>
-            Sono Marco Castellana, Art Director con base in Italia. Il mio
-            lavoro si muove tra brand identity, editorial design e direzione
-            creativa, con un approccio che mette al centro la chiarezza visiva e
-            la coerenza narrativa.
+            Sono Marco, Art Director con base a Milano.
+            Mi occupo di direzione visuale e progettazione di campagne stampa, social e digital ADV, lavorando sull&apos;equilibrio tra estetica e strategia.
           </p>
           <p className={styles.text}>
-            Credo che il design migliore nasca dall&apos;ascolto: capire
-            l&apos;essenza di un progetto, le persone a cui si rivolge e il
-            contesto in cui vive. Ogni dettaglio — dalla scelta tipografica alla
-            palette cromatica — è una decisione consapevole al servizio della
-            storia da raccontare.
+            Progetto identità visive, contenuti e format per i social — organici e paid — seguendo l&apos;intero processo creativo: dall&apos;idea alla produzione, fino alla declinazione in asset statici e animati. Il mio approccio è pratico, orientato al risultato e attento al contesto in cui i contenuti vivono.
           </p>
           <p className={styles.text}>
-            Ho lavorato con realtà di diversa natura e dimensione, sempre con la
-            stessa attenzione alla qualità e alla cura del risultato finale.
+            Lavoro quotidianamente con la suite Adobe, con un focus su Photoshop e Illustrator, e utilizzo After Effects per animazioni essenziali ma funzionali. Mi interesso anche di UX/UI, sperimentando con Figma nella progettazione di interfacce e prototipi responsive.
+          </p>
+          <p className={styles.text}>
+            Fuori dal lavoro porto dentro al lavoro quello che mi definisce: sport, cultura visiva, fumetti, videogiochi e un&apos;attenzione costante ai linguaggi digitali e ai trend contemporanei.
+            Mi piacciono i progetti che mettono in discussione le soluzioni ovvie e costringono a fare un passo in più.
           </p>
 
           <div className={styles.section}>
@@ -44,7 +38,6 @@ export default function AboutPage() {
               <li className={styles.listItem}>Brand Identity</li>
               <li className={styles.listItem}>Visual Design</li>
               <li className={styles.listItem}>Editorial Design</li>
-              <li className={styles.listItem}>Packaging Design</li>
               <li className={styles.listItem}>Creative Direction</li>
             </ul>
           </div>
@@ -55,6 +48,7 @@ export default function AboutPage() {
               <li className={styles.listItem}>Adobe Creative Suite</li>
               <li className={styles.listItem}>Figma</li>
               <li className={styles.listItem}>After Effects</li>
+              <li className={styles.listItem}>AI Tools (ChatGPT, Midjourney, Firefly)</li>
             </ul>
           </div>
         </div>

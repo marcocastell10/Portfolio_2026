@@ -38,6 +38,19 @@
   opacity: 0.6;
 }
 
+.aboutPhoto {
+  position: fixed;
+  top: 60px;
+  right: var(--padding-x);
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 8px;
+  pointer-events: none;
+  z-index: 130;
+}
+
 /* Hamburger — mobile only */
 .burger {
   display: flex;

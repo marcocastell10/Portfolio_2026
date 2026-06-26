@@ -7,6 +7,7 @@ import styles from "./Header.module.css";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [showPhoto, setShowPhoto] = useState(false);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -28,7 +29,12 @@ export default function Header() {
           <Link href="/#lavori" className={styles.navLink}>
             Lavori
           </Link>
-          <Link href="/about" className={styles.navLink}>
+          <Link
+            href="/about"
+            className={styles.navLink}
+            onMouseEnter={() => setShowPhoto(true)}
+            onMouseLeave={() => setShowPhoto(false)}
+          >
             About
           </Link>
           <ThemeToggle />
@@ -45,6 +51,10 @@ export default function Header() {
           <span className={`${styles.burgerLine} ${open ? styles.burgerOpen3 : ""}`} />
         </button>
       </header>
+
+      {showPhoto && (
+        <img src="/marco.jpg" alt="Marco Castellana" className={styles.aboutPhoto} />
+      )}
 
       <div className={`${styles.mobileMenu} ${open ? styles.mobileMenuOpen : ""}`}>
         <nav className={styles.mobileNav}>

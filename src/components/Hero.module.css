@@ -18,6 +18,15 @@
   color: var(--color-text);
 }
 
+.author {
+  margin-top: 16px;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.02em;
+  font-style: italic;
+}
+
 .subtitle {
   margin-top: 20px;
   font-size: 0.875rem;

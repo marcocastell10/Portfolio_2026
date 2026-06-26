@@ -64,7 +64,32 @@ export default async function ProjectPage(
               <span className={styles.detailItem}>{project.client}</span>
             </div>
           </div>
-          <p className={styles.description}>{project.fullDescription}</p>
+          {typeof project.fullDescription === "string" ? (
+            <p className={styles.description}>{project.fullDescription}</p>
+          ) : (
+            <div className={styles.descriptionSections}>
+              {project.fullDescription.map((section, i) => (
+                <div key={i} className={styles.section}>
+                  <h2 className={styles.sectionTitle}>{section.title}</h2>
+                  {section.body.split("\n\n").map((paragraph, j) => (
+                    <p key={j} className={styles.description}>
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              ))}
+            </div>
+          )}
+          {project.externalLink && (
+            <a
+              href={project.externalLink.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.externalLink}
+            >
+              {project.externalLink.label}
+            </a>
+          )}
         </div>
 
         <div className={styles.imageGrid}>
