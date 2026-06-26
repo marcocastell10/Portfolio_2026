@@ -115,11 +115,10 @@ const translations = {
       dark: "Switch to dark mode",
     },
   },
-} as const;
+};
 
 export type Lang = "it" | "en";
-export type Translations = typeof translations.it;
 
-export function t(lang: Lang): Translations {
+export function t(lang: Lang) {
   return translations[lang];
 }
