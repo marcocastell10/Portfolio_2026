@@ -22,6 +22,9 @@ export default function ProjectGallery() {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className={styles.image}
               />
+              <div className={styles.overlay}>
+                <span className={styles.overlayText}>Guarda il progetto</span>
+              </div>
             </div>
             <div className={styles.info}>
               <h3 className={styles.projectTitle}>{project.title}</h3>

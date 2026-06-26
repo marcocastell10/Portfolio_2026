@@ -1,0 +1,27 @@
+.svg {
+  display: block;
+}
+
+.bubble {
+  fill: #999;
+}
+
+.mediaText {
+  fill: #fafafa;
+}
+
+.keyText {
+  fill: #999;
+}
+
+:global([data-theme="dark"]) .bubble {
+  fill: #fff;
+}
+
+:global([data-theme="dark"]) .mediaText {
+  fill: #0a0a0a;
+}
+
+:global([data-theme="dark"]) .keyText {
+  fill: #fff;
+}

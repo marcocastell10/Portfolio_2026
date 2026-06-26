@@ -4,7 +4,7 @@
 }
 
 .container {
-  max-width: 700px;
+  max-width: 100%;
   padding: 0 var(--padding-x);
 }
 
@@ -50,6 +50,41 @@
   border-bottom: 1px solid var(--color-border);
 }
 
+.studyList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.studyItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.studyTitle {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.studyPlace {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+  line-height: 1.5;
+}
+
+.studyYears {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 .list {
   list-style: none;
   display: flex;
@@ -87,6 +122,18 @@
 
   .sectionTitle {
     margin-bottom: 20px;
+  }
+
+  .studyTitle {
+    font-size: 1rem;
+  }
+
+  .studyPlace {
+    font-size: 0.875rem;
+  }
+
+  .studyYears {
+    font-size: 0.875rem;
   }
 
   .listItem {

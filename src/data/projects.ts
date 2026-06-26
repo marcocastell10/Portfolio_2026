@@ -12,7 +12,7 @@ export interface Project {
   client: string;
   images: [string, string];
   fullDescription: string | DescriptionSection[];
-  externalLink?: { label: string; url: string };
+  externalLink?: { label: string; url: string } | { label: string; url: string }[];
 }
 
 // Per aggiungere un nuovo progetto, copia un blocco e modifica i dati.
@@ -115,10 +115,16 @@ export const projects: Project[] = [
         body: "La campagna è stata distribuita su un ecosistema multi-touchpoint coerente: uno spot TV da 15 secondi su Rai e Sky, annunci stampa declinati sia in chiave B2C che B2B, un annuncio radio su Spotify, DOOH a Milano e attività sui social media.\n\nOgni canale ha mantenuto la stessa voce strategica, adattandosi al contesto e al target senza perdere riconoscibilità.",
       },
     ],
-    externalLink: {
-      label: "Leggi l'articolo su Engage",
-      url: "https://engage.it/agenzie/italiaonline-firma-la-campagna-integrata-di-horizon-automotive.aspx",
-    },
+    externalLink: [
+      {
+        label: "Leggi l'articolo su Engage",
+        url: "https://engage.it/agenzie/italiaonline-firma-la-campagna-integrata-di-horizon-automotive.aspx",
+      },
+      {
+        label: "Leggi l'articolo su Mediakey",
+        url: "https://mediakey.it/news/la-campagna-di-comunicazione-di-horizon-automotive-vince-il-press-outdoor-promotion-key-award-2025-nella-categoria-automotive-energy/",
+      },
+    ],
   },
   {
     slug: "visual-identity-spazio",

@@ -81,14 +81,22 @@ export default async function ProjectPage(
             </div>
           )}
           {project.externalLink && (
-            <a
-              href={project.externalLink.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.externalLink}
-            >
-              {project.externalLink.label}
-            </a>
+            <div className={styles.externalLinks}>
+              {(Array.isArray(project.externalLink)
+                ? project.externalLink
+                : [project.externalLink]
+              ).map((link, i) => (
+                <a
+                  key={i}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.externalLink}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
           )}
         </div>
 

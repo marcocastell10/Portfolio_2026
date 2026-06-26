@@ -91,11 +91,17 @@
   color: var(--color-text-secondary);
 }
 
+.externalLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 40px;
+}
+
 .externalLink {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 40px;
   padding: 14px 28px;
   font-size: 0.875rem;
   font-weight: 500;

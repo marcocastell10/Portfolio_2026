@@ -32,6 +32,26 @@ export default function AboutPage() {
           </p>
 
           <div className={styles.section}>
+            <h2 className={styles.sectionTitle}>Studi</h2>
+            <div className={styles.studyList}>
+              <div className={styles.studyItem}>
+                <div>
+                  <p className={styles.studyTitle}>Laurea triennale in Communication Design</p>
+                  <p className={styles.studyPlace}>IAAD Bologna — Votazione finale: 108</p>
+                </div>
+                <span className={styles.studyYears}>2019 – 2022</span>
+              </div>
+              <div className={styles.studyItem}>
+                <div>
+                  <p className={styles.studyTitle}>Liceo Artistico — Indirizzo Grafico Pubblicitario</p>
+                  <p className={styles.studyPlace}>Liceo A. Venturi, Modena</p>
+                </div>
+                <span className={styles.studyYears}>2013 – 2018</span>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.section}>
             <h2 className={styles.sectionTitle}>Competenze</h2>
             <ul className={styles.list}>
               <li className={styles.listItem}>Art Direction</li>
