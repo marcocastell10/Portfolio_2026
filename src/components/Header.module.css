@@ -51,6 +51,12 @@
   z-index: 130;
 }
 
+.mobileRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 /* Hamburger — mobile only */
 .burger {
   display: flex;
@@ -130,6 +136,11 @@
 .mobileTheme {
   display: flex;
   align-items: center;
+  gap: 20px;
+}
+
+.mobileTheme button {
+  color: var(--color-text);
 }
 
 /* Desktop: show nav, hide burger and mobile menu */
@@ -138,7 +149,7 @@
     display: flex;
   }
 
-  .burger {
+  .mobileRight {
     display: none;
   }
 

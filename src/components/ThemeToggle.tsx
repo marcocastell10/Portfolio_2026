@@ -1,11 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useLang } from "../context/LanguageContext";
+import { t } from "../data/translations";
 import styles from "./ThemeToggle.module.css";
 
 export default function ThemeToggle() {
   const [dark, setDark] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const { lang } = useLang();
+  const tr = t(lang);
 
   useEffect(() => {
     setMounted(true);
@@ -29,7 +33,7 @@ export default function ThemeToggle() {
     <button
       className={styles.toggle}
       onClick={toggle}
-      aria-label={dark ? "Attiva modalità chiara" : "Attiva modalità scura"}
+      aria-label={dark ? tr.theme.light : tr.theme.dark}
     >
       {dark ? (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">

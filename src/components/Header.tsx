@@ -3,11 +3,16 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
+import LanguageToggle from "./LanguageToggle";
+import { useLang } from "../context/LanguageContext";
+import { t } from "../data/translations";
 import styles from "./Header.module.css";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [showPhoto, setShowPhoto] = useState(false);
+  const { lang } = useLang();
+  const tr = t(lang);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -27,7 +32,7 @@ export default function Header() {
 
         <nav className={styles.desktopNav}>
           <Link href="/#lavori" className={styles.navLink}>
-            Lavori
+            {tr.header.works}
           </Link>
           <Link
             href="/about"
@@ -35,21 +40,25 @@ export default function Header() {
             onMouseEnter={() => setShowPhoto(true)}
             onMouseLeave={() => setShowPhoto(false)}
           >
-            About
+            {tr.header.about}
           </Link>
+          <LanguageToggle />
           <ThemeToggle />
         </nav>
 
-        <button
-          className={styles.burger}
-          onClick={() => setOpen(!open)}
-          aria-label={open ? "Chiudi menu" : "Apri menu"}
-          aria-expanded={open}
-        >
-          <span className={`${styles.burgerLine} ${open ? styles.burgerOpen1 : ""}`} />
-          <span className={`${styles.burgerLine} ${open ? styles.burgerOpen2 : ""}`} />
-          <span className={`${styles.burgerLine} ${open ? styles.burgerOpen3 : ""}`} />
-        </button>
+        <div className={styles.mobileRight}>
+          <LanguageToggle />
+          <button
+            className={styles.burger}
+            onClick={() => setOpen(!open)}
+            aria-label={open ? tr.header.closeMenu : tr.header.openMenu}
+            aria-expanded={open}
+          >
+            <span className={`${styles.burgerLine} ${open ? styles.burgerOpen1 : ""}`} />
+            <span className={`${styles.burgerLine} ${open ? styles.burgerOpen2 : ""}`} />
+            <span className={`${styles.burgerLine} ${open ? styles.burgerOpen3 : ""}`} />
+          </button>
+        </div>
       </header>
 
       {showPhoto && (
@@ -59,10 +68,10 @@ export default function Header() {
       <div className={`${styles.mobileMenu} ${open ? styles.mobileMenuOpen : ""}`}>
         <nav className={styles.mobileNav}>
           <Link href="/#lavori" className={styles.mobileLink} onClick={close}>
-            Lavori
+            {tr.header.works}
           </Link>
           <Link href="/about" className={styles.mobileLink} onClick={close}>
-            About
+            {tr.header.about}
           </Link>
         </nav>
         <div className={styles.mobileTheme}>

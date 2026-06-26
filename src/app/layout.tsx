@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import LoadingScreen from "../components/LoadingScreen";
+import { LanguageProvider } from "../context/LanguageContext";
 
 const dmSans = DM_Sans({
   variable: "--font-sans",
@@ -29,7 +30,9 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <LoadingScreen>{children}</LoadingScreen>
+        <LanguageProvider>
+          <LoadingScreen>{children}</LoadingScreen>
+        </LanguageProvider>
       </body>
     </html>
   );

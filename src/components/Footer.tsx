@@ -1,6 +1,13 @@
+"use client";
+
+import { useLang } from "../context/LanguageContext";
+import { t } from "../data/translations";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
+  const { lang } = useLang();
+  const tr = t(lang);
+
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
@@ -8,7 +15,7 @@ export default function Footer() {
           <p className={styles.name}>Marco Castellana</p>
           <p className={styles.role}>Art Director</p>
           <div className={styles.contactGroup} style={{ marginTop: 24 }}>
-            <span className={styles.contactLabel}>Email</span>
+            <span className={styles.contactLabel}>{tr.footer.emailLabel}</span>
             <a
               href="mailto:marco.castellana5e@gmail.com"
               className={styles.contactLink}

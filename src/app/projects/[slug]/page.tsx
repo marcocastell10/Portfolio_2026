@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
-import Image from "next/image";
 import { projects } from "../../../data/projects";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
+import ProjectContent from "../../../components/ProjectContent";
 import styles from "./project.module.css";
 
 export function generateStaticParams() {
@@ -40,105 +39,11 @@ export default async function ProjectPage(
     <>
       <Header />
       <main className={styles.page}>
-        <Link href="/#lavori" className={styles.backLink}>
-          &larr; Tutti i progetti
-        </Link>
-
-        <div className={styles.coverWrapper}>
-          <Image
-            src={project.cover}
-            alt={project.title}
-            fill
-            priority
-            sizes="100vw"
-            className={styles.coverImage}
-          />
-        </div>
-
-        <div className={styles.content}>
-          <div className={styles.meta}>
-            <h1 className={styles.title}>{project.title}</h1>
-            <div className={styles.details}>
-              <span className={styles.detailItem}>{project.year}</span>
-              <span className={styles.detailDivider}>/</span>
-              <span className={styles.detailItem}>{project.client}</span>
-            </div>
-          </div>
-          {typeof project.fullDescription === "string" ? (
-            <p className={styles.description}>{project.fullDescription}</p>
-          ) : (
-            <div className={styles.descriptionSections}>
-              {project.fullDescription.map((section, i) => (
-                <div key={i} className={styles.section}>
-                  <h2 className={styles.sectionTitle}>{section.title}</h2>
-                  {section.body.split("\n\n").map((paragraph, j) => (
-                    <p key={j} className={styles.description}>
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
-              ))}
-            </div>
-          )}
-          {project.externalLink && (
-            <div className={styles.externalLinks}>
-              {(Array.isArray(project.externalLink)
-                ? project.externalLink
-                : [project.externalLink]
-              ).map((link, i) => (
-                <a
-                  key={i}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.externalLink}
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          )}
-        </div>
-
-        <div className={styles.imageGrid}>
-          {project.images.map((src, i) => (
-            <div key={i} className={styles.gridImage}>
-              <Image
-                src={src}
-                alt={`${project.title} — ${i + 1}`}
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className={styles.image}
-              />
-            </div>
-          ))}
-        </div>
-
-        <nav className={styles.nav}>
-          <div>
-            {prevProject && (
-              <Link
-                href={`/projects/${prevProject.slug}`}
-                className={styles.navLink}
-              >
-                <span className={styles.navLabel}>&larr; Precedente</span>
-                <span className={styles.navTitle}>{prevProject.title}</span>
-              </Link>
-            )}
-          </div>
-          <div>
-            {nextProject && (
-              <Link
-                href={`/projects/${nextProject.slug}`}
-                className={styles.navLink}
-                style={{ textAlign: "right" }}
-              >
-                <span className={styles.navLabel}>Successivo &rarr;</span>
-                <span className={styles.navTitle}>{nextProject.title}</span>
-              </Link>
-            )}
-          </div>
-        </nav>
+        <ProjectContent
+          project={project}
+          prevProject={prevProject ? { slug: prevProject.slug, title: prevProject.title } : null}
+          nextProject={nextProject ? { slug: nextProject.slug, title: nextProject.title } : null}
+        />
       </main>
       <Footer />
     </>
