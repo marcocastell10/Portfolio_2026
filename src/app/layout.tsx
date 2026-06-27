@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import LoadingScreen from "../components/LoadingScreen";
+import CustomCursor from "../components/CustomCursor";
 import { LanguageProvider } from "../context/LanguageContext";
 
 const dmSans = DM_Sans({
@@ -25,12 +26,13 @@ export default function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||(t==null&&window.matchMedia("(prefers-color-scheme: dark)").matches)){document.documentElement.setAttribute("data-theme","dark")}}catch(e){}})()`,
+            __html: `(function(){try{var t=localStorage.getItem("theme");if(t!=="light"){document.documentElement.setAttribute("data-theme","dark")}}catch(e){document.documentElement.setAttribute("data-theme","dark")}})()`,
           }}
         />
       </head>
       <body>
         <LanguageProvider>
+          <CustomCursor />
           <LoadingScreen>{children}</LoadingScreen>
         </LanguageProvider>
       </body>

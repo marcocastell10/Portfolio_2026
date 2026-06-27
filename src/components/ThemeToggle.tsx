@@ -14,7 +14,7 @@ export default function ThemeToggle() {
   useEffect(() => {
     setMounted(true);
     const stored = localStorage.getItem("theme");
-    if (stored === "dark" || (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+    if (stored !== "light") {
       setDark(true);
       document.documentElement.setAttribute("data-theme", "dark");
     }

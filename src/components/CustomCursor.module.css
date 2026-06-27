@@ -1,0 +1,32 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #000000;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease, opacity 0.2s ease;
+  opacity: 0;
+}
+
+:global([data-theme="dark"]) .cursor {
+  background-color: #ffffff;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.hover {
+  transform: translate(-50%, -50%) scale(2);
+}
+
+@media (pointer: coarse), (max-width: 768px) {
+  .cursor {
+    display: none;
+  }
+}

@@ -48,6 +48,12 @@ body {
   line-height: 1.6;
 }
 
+@media (pointer: fine) and (min-width: 769px) {
+  * {
+    cursor: none !important;
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;
